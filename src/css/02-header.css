@@ -273,19 +273,54 @@
   }
 }
 
-/* Abaixo disso o nome não cabe ao lado do botão e do hambúrguer. */
+/* No celular o botão vira só o ícone do WhatsApp, pra sobrar espaço pro nome
+   por extenso ao lado do brasão. O nome pega o que sobra da linha:
+   100vw menos gutters, brasão, botão, hambúrguer e os vãos. */
 @media (max-width: 620px) {
-  .topo__nome {
-    display: none;
+  .topo__inner {
+    gap: 8px;
+  }
+  .topo__marca {
+    gap: 9px;
+    min-width: 0;
+  }
+  .topo__nome,
+  .topo.rolou .topo__nome {
+    width: clamp(104px, calc(100vw - 226px), 200px);
+  }
+  .topo__cta {
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    justify-content: center;
+    margin-left: auto;
+  }
+  .topo__cta-txt {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+  .topo__cta .btn__wpp {
+    width: 24px;
+    height: 24px;
+  }
+  .topo__hamb {
+    width: 34px;
+    margin-left: 0;
   }
 }
 
-@media (max-width: 400px) {
-  .topo__cta {
-    padding: 9px 12px;
-    font-size: 11px;
+/* Telas bem estreitas: brasão menor pra o nome ainda caber. */
+@media (max-width: 360px) {
+  .topo__logo,
+  .topo.rolou .topo__logo {
+    width: 54px;
   }
-  .topo__logo {
-    width: 62px;
+  .topo__nome,
+  .topo.rolou .topo__nome {
+    width: clamp(96px, calc(100vw - 208px), 200px);
   }
 }
