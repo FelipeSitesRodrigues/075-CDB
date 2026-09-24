@@ -1,0 +1,72 @@
+/* =========================================================== 02 pilares ==== */
+
+.pilares {
+  background: var(--osso);
+  padding: clamp(30px, 3.1vw, 44px) 0;
+}
+
+.pilares__inner {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.pilar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  padding: 10px 18px;
+  text-align: center;
+}
+
+/* a divisória vertical entre as colunas, como no mockup */
+.pilar + .pilar {
+  border-left: 1px solid var(--cinza-linha);
+}
+
+.pilar__ico {
+  width: clamp(40px, 3.7vw, 52px);
+  height: auto;
+  color: var(--verde);
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.pilar__ico--br {
+  width: clamp(32px, 3vw, 42px);
+}
+
+.pilar:hover .pilar__ico {
+  transform: translateY(-4px) scale(1.06);
+}
+
+.pilar__txt {
+  font-family: var(--f-display);
+  font-style: italic;
+  font-size: clamp(15px, 1.5vw, 22px);
+  line-height: 1.14;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--marinho);
+}
+
+@media (max-width: 720px) {
+  .pilares__inner {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 6px;
+  }
+
+  .pilar {
+    padding: 22px 10px;
+  }
+
+  /* no grid 2x2 a divisória só vale entre as colunas, não entre as linhas */
+  .pilar + .pilar {
+    border-left: 0;
+  }
+  .pilar:nth-child(2n) {
+    border-left: 1px solid var(--cinza-linha);
+  }
+  .pilar:nth-child(n + 3) {
+    border-top: 1px solid var(--cinza-linha);
+  }
+}

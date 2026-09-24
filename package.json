@@ -1,0 +1,18 @@
+{
+  "name": "075-cbd",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Site institucional da CBD, Confederacao Brasileira de Desportos e Lazer. HTML, CSS e JS estatico.",
+  "scripts": {
+    "build": "node build.mjs",
+    "serve": "node scripts/serve.mjs",
+    "imagens": "node scripts/processar-imagens.mjs",
+    "fontes": "node scripts/baixar-fontes.mjs"
+  },
+  "devDependencies": {
+    "lighthouse": "^12.8.2",
+    "puppeteer-core": "^25.11.0",
+    "sharp": "^0.35.4"
+  }
+}

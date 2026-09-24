@@ -1,0 +1,369 @@
+/* ==========================================================================
+   Base: variáveis, reset, tipografia e utilitários
+   Paleta e escala tiradas do mockup por amostragem de pixel.
+   ========================================================================== */
+
+:root {
+  /* cores */
+  --marinho: #011537;
+  --marinho-esc: #00102c;
+  --marinho-hero: #012156;
+  --marinho-txt: #0a1b3d;
+  --verde: #018340;
+  --verde-esc: #016b34;
+  --verde-claro: #12a052;
+  --amarelo: #fcc514;
+  --amarelo-esc: #edb500;
+  --osso: #f7f6f2;
+  --osso-claro: #faf9f6;
+  --branco: #fff;
+  --cinza: #5a6478;
+  --cinza-linha: #e2ded5;
+
+  /* tipografia */
+  --f-display: Anton, 'Arial Narrow', Impact, sans-serif;
+  --f-corpo: Poppins, system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+  --f-script: Caveat, 'Segoe Script', cursive;
+
+  /* medidas */
+  --container: 1340px;
+  --gutter: 40px;
+  --r: 10px;
+  --header-h: 84px;
+  --sombra-card: 0 2px 10px rgba(1, 21, 55, 0.06), 0 12px 28px rgba(1, 21, 55, 0.05);
+  --sombra-card-hover: 0 4px 14px rgba(1, 21, 55, 0.1), 0 20px 44px rgba(1, 21, 55, 0.12);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  /* o header é fixo, então a âncora precisa parar abaixo dele */
+  scroll-padding-top: calc(var(--header-h) + 16px);
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--osso-claro);
+  color: var(--marinho-txt);
+  font-family: var(--f-corpo);
+  font-size: 18px;
+  line-height: 1.6;
+  font-weight: 400;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Sem height:auto o atributo height do HTML vira altura fixa e estica a foto.
+   O width/height no HTML continua lá só pra reservar o espaço e zerar o CLS. */
+img,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+:focus-visible {
+  outline: 3px solid var(--amarelo);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--container);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+/* --------------------------------------------------------------- tipografia */
+
+/* A Anton não tem itálico: o navegador inclina sozinho. A folga à direita
+   existe porque a ponta da última letra sai da caixa quando inclinada. */
+.display {
+  font-family: var(--f-display);
+  font-style: italic;
+  font-weight: 400;
+  text-transform: uppercase;
+  line-height: 0.94;
+  letter-spacing: 0.005em;
+  padding-right: 0.14em;
+}
+
+.t-secao {
+  font-size: clamp(34px, 4.9vw, 70px);
+}
+
+.rotulo {
+  font-family: var(--f-corpo);
+  font-size: clamp(11px, 1.02vw, 14px);
+  font-weight: 600;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--cinza);
+  margin-bottom: 18px;
+}
+
+.rotulo--claro {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.rotulo--marinho {
+  color: rgba(1, 21, 55, 0.62);
+}
+
+.amarelo {
+  color: var(--amarelo);
+}
+.verde {
+  color: var(--verde);
+}
+
+.script {
+  font-family: var(--f-script);
+  font-weight: 700;
+  line-height: 1.02;
+  letter-spacing: 0.01em;
+}
+
+/* rabisco verde e amarelo do logo, usado embaixo do lettering manuscrito */
+.rabisco {
+  display: block;
+  width: 100%;
+  max-width: 170px;
+  height: auto;
+}
+
+/* ------------------------------------------------------------------ botões */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 15px 26px;
+  border-radius: 6px;
+  font-family: var(--f-corpo);
+  font-size: clamp(13px, 1.05vw, 15px);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  transition: background-color 0.25s ease, color 0.25s ease, transform 0.25s ease,
+    box-shadow 0.25s ease, border-color 0.25s ease;
+  will-change: transform;
+}
+
+.btn svg {
+  flex: none;
+  transition: transform 0.25s ease;
+}
+
+.btn:hover svg {
+  transform: translateX(5px);
+}
+
+.btn--amarelo {
+  background: var(--amarelo);
+  color: var(--marinho);
+  box-shadow: 0 6px 18px rgba(252, 197, 20, 0.22);
+}
+
+.btn--amarelo:hover {
+  background: var(--amarelo-esc);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 26px rgba(252, 197, 20, 0.34);
+}
+
+.btn--branco {
+  background: var(--branco);
+  color: var(--marinho);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+}
+
+.btn--branco:hover {
+  background: var(--osso);
+  transform: translateY(-2px);
+}
+
+.btn--linha-verde {
+  background: transparent;
+  color: var(--marinho-txt);
+  border: 1.5px solid var(--verde);
+}
+
+.btn--linha-verde:hover {
+  background: var(--verde);
+  color: var(--branco);
+  transform: translateY(-2px);
+}
+
+/* ícone de WhatsApp dentro do botão do topo */
+.btn__wpp {
+  display: grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--marinho);
+  color: var(--amarelo);
+  flex: none;
+}
+
+.btn__wpp svg {
+  width: 13px;
+  height: 13px;
+}
+
+.btn--amarelo:hover .btn__wpp svg {
+  transform: none;
+}
+
+/* ------------------------------------------------------- seções e divisores */
+
+.secao {
+  position: relative;
+  padding: clamp(56px, 6.1vw, 90px) 0;
+}
+
+.secao--osso {
+  background: var(--osso);
+}
+.secao--osso-claro {
+  background: var(--osso-claro);
+}
+.secao--marinho {
+  background: var(--marinho);
+  color: var(--branco);
+}
+.secao--verde {
+  background: var(--verde);
+  color: var(--branco);
+}
+.secao--amarelo {
+  background: var(--amarelo);
+  color: var(--marinho);
+}
+
+.divisor-v {
+  width: 1px;
+  align-self: stretch;
+  background: currentColor;
+  opacity: 0.16;
+}
+
+/* ---------------------------------------------------------------- animações */
+
+/* Entrada ao aparecer na tela. O estado final é o normal: se o JS não rodar,
+   ou se a pessoa pediu menos movimento, o conteúdo já está visível. */
+@media (prefers-reduced-motion: no-preference) {
+  .js .reveal {
+    opacity: 0;
+    transform: translateY(22px);
+    transition: opacity 0.7s cubic-bezier(0.22, 0.61, 0.36, 1),
+      transform 0.7s cubic-bezier(0.22, 0.61, 0.36, 1);
+  }
+
+  .js .reveal.visivel {
+    opacity: 1;
+    transform: none;
+  }
+
+  .js .reveal[data-atraso='1'] {
+    transition-delay: 0.09s;
+  }
+  .js .reveal[data-atraso='2'] {
+    transition-delay: 0.18s;
+  }
+  .js .reveal[data-atraso='3'] {
+    transition-delay: 0.27s;
+  }
+  .js .reveal[data-atraso='4'] {
+    transition-delay: 0.36s;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* --------------------------------------------------------------- utilitário */
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (max-width: 900px) {
+  :root {
+    --gutter: 22px;
+    --header-h: 72px;
+  }
+
+  body {
+    font-size: 16px;
+  }
+
+  /* Um clamp em vw não atende as duas pontas: 4.9vw dá 70px em 1440 e só 19px
+     em 390. No celular a escala é outra. */
+  .t-secao {
+    font-size: clamp(30px, 10.6vw, 46px);
+  }
+
+  .rotulo {
+    font-size: 11px;
+    letter-spacing: 0.26em;
+    margin-bottom: 14px;
+  }
+
+  .btn {
+    padding: 14px 22px;
+    font-size: 13px;
+  }
+}

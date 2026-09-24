@@ -1,0 +1,24 @@
+{
+  "_leia": "Dados que ainda dependem do Vitor. Campo vazio faz o elemento sumir do site em vez de virar link morto. O build lista o que está faltando a cada execução.",
+
+  "whatsapp": "",
+  "whatsappMensagem": "Olá! Vim pelo site da CBD e gostaria de falar com a Confederação.",
+
+  "email": "contato@cbd.org.br",
+  "_email": "veio do mockup, confirmar com o Vitor antes de publicar",
+
+  "local": "Brasil",
+  "endereco": "",
+  "cnpj": "",
+
+  "instagram": "",
+  "facebook": "",
+  "youtube": "",
+  "linkedin": "",
+
+  "mostrarNoticias": true,
+  "_mostrarNoticias": "false tira a seção de notícias inteira do build; os 3 cards de hoje são exemplo do mockup, não notícia real",
+
+  "dominio": "https://cbd.org.br",
+  "_dominio": "usado em canonical e og:url, trocar quando o domínio real for definido"
+}

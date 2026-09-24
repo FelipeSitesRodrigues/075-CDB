@@ -1,0 +1,106 @@
+/* =============================================================== 08 cta ==== */
+
+.cta {
+  position: relative;
+  padding: clamp(56px, 6vw, 90px) 0;
+  background: var(--marinho);
+  color: var(--branco);
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.cta__foto {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+}
+
+.cta__foto img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 62% 40%;
+}
+
+/* A foto do Rio entra só como textura: o azul continua mandando e o texto
+   precisa de contraste alto por cima dela. */
+.cta__veu {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    linear-gradient(90deg, var(--marinho) 22%, rgba(1, 21, 55, 0.9) 48%, rgba(1, 21, 55, 0.78) 100%),
+    linear-gradient(180deg, rgba(1, 21, 55, 0.4), rgba(1, 21, 55, 0.4));
+}
+
+.cta__inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1.06fr) minmax(0, 1fr) auto;
+  gap: clamp(26px, 3.6vw, 56px);
+  align-items: center;
+}
+
+.cta__titulo {
+  font-size: clamp(30px, 3.6vw, 51px);
+  text-shadow: 0 3px 16px rgba(0, 0, 0, 0.4);
+}
+
+.cta__meio p {
+  max-width: 40ch;
+  margin-bottom: 24px;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.cta__lettering {
+  text-align: right;
+  color: var(--branco);
+}
+
+.cta__lettering .script {
+  display: block;
+  font-size: clamp(20px, 2.1vw, 30px);
+  text-shadow: 0 3px 14px rgba(0, 0, 0, 0.42);
+}
+
+.cta__lettering .rabisco {
+  margin-top: 8px;
+  margin-left: auto;
+  width: clamp(96px, 9vw, 140px);
+}
+
+@media (max-width: 1080px) {
+  .cta__inner {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    align-items: start;
+  }
+  /* Em tela média o lettering desce pra segunda linha. Jogado à esquerda ele
+     deixava meia seção vazia, então fica embaixo do próprio bloco de texto. */
+  .cta__lettering {
+    grid-column: 2;
+    text-align: left;
+    margin-top: 6px;
+  }
+  .cta__lettering .rabisco {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 760px) {
+  .cta__inner {
+    grid-template-columns: 1fr;
+    gap: 26px;
+  }
+
+  .cta__foto img {
+    object-position: 72% 46%;
+  }
+
+  .cta__veu {
+    background: linear-gradient(180deg, rgba(1, 21, 55, 0.93) 0%, rgba(1, 21, 55, 0.86) 60%, rgba(1, 21, 55, 0.9) 100%);
+  }
+
+  .cta__meio .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}

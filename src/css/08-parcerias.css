@@ -1,0 +1,58 @@
+/* ========================================================= 06 parcerias ==== */
+
+.parcerias {
+  padding: clamp(50px, 5.4vw, 78px) 0;
+}
+
+.parcerias__inner {
+  display: grid;
+  grid-template-columns: minmax(0, 0.76fr) 1px minmax(0, 1.34fr) 1px auto;
+  gap: clamp(26px, 3.4vw, 52px);
+  align-items: center;
+}
+
+.parcerias__titulo {
+  font-size: clamp(30px, 3.6vw, 51px);
+  color: var(--branco);
+  text-shadow: 0 3px 14px rgba(0, 0, 0, 0.18);
+}
+
+.parcerias__texto {
+  max-width: 52ch;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.parcerias__acao {
+  justify-self: end;
+}
+
+@media (max-width: 1080px) {
+  .parcerias__inner {
+    grid-template-columns: minmax(0, 0.9fr) 1px minmax(0, 1.3fr);
+    row-gap: 30px;
+  }
+  .parcerias__inner .divisor-v:last-of-type {
+    display: none;
+  }
+  .parcerias__acao {
+    grid-column: 1 / -1;
+    justify-self: start;
+  }
+}
+
+@media (max-width: 760px) {
+  .parcerias__inner {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+  .parcerias__inner .divisor-v {
+    display: none;
+  }
+  .parcerias__acao {
+    justify-self: stretch;
+  }
+  .parcerias__acao .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}

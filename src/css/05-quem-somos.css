@@ -1,0 +1,132 @@
+/* ======================================================== 03 quem somos ==== */
+
+.quem__inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.92fr);
+  gap: clamp(36px, 5vw, 76px);
+  align-items: start;
+}
+
+.quem__titulo {
+  margin-bottom: 26px;
+  color: var(--marinho);
+}
+
+.quem__texto > p {
+  max-width: 54ch;
+  margin-bottom: 18px;
+  color: #33405c;
+}
+
+.quem__texto .btn {
+  margin-top: 14px;
+}
+
+/* ------------------------------------------------------------------ mídia */
+
+.quem__midia {
+  display: grid;
+  grid-template-columns: minmax(0, 1.42fr) minmax(0, 1fr);
+  grid-template-areas:
+    'foto1 citacao'
+    'foto1 foto2';
+  gap: 20px;
+  align-items: start;
+}
+
+.quem__foto1 {
+  grid-area: foto1;
+  margin: 0;
+  border-radius: var(--r);
+  overflow: hidden;
+  box-shadow: var(--sombra-card);
+}
+
+.quem__foto1 img {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  object-position: 50% 30%;
+  transition: transform 0.7s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.quem__midia:hover .quem__foto1 img {
+  transform: scale(1.035);
+}
+
+.quem__citacao {
+  grid-area: citacao;
+  margin: 0;
+  padding-top: 18px;
+  font-size: clamp(17px, 1.5vw, 22px);
+  font-style: italic;
+  font-weight: 500;
+  line-height: 1.38;
+  color: #6b7488;
+}
+
+.quem__fio {
+  display: block;
+  width: 54px;
+  height: 4px;
+  border-radius: 2px;
+  background: var(--amarelo);
+  margin-bottom: 20px;
+}
+
+.quem__foto2 {
+  grid-area: foto2;
+  margin: 0;
+  align-self: end;
+  border: 5px solid var(--osso-claro);
+  border-radius: var(--r);
+  overflow: hidden;
+  box-shadow: var(--sombra-card);
+}
+
+.quem__foto2 img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  object-position: 50% 42%;
+}
+
+/* ----------------------------------------------------------------- mobile */
+
+@media (max-width: 900px) {
+  .quem__inner {
+    grid-template-columns: 1fr;
+  }
+
+  /* No celular vira uma coluna só: texto, botão, foto grande, citação e a
+     foto menor no fim, na ordem do mockup. */
+  .quem__midia {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      'foto1'
+      'citacao'
+      'foto2';
+    gap: 26px;
+  }
+
+  /* No celular a foto vira retrato mais alto: com 4/3.4 o corte comia o logo
+     da camiseta, que é justamente o que a foto tem de mais importante. */
+  .quem__foto1 img {
+    aspect-ratio: 4 / 4.3;
+    object-position: 50% 24%;
+  }
+
+  .quem__citacao {
+    padding-top: 0;
+    font-size: 20px;
+  }
+
+  .quem__foto2 {
+    border-width: 0;
+  }
+
+  .quem__foto2 img {
+    aspect-ratio: 4 / 3.1;
+    object-position: 50% 36%;
+  }
+}

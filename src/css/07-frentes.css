@@ -1,0 +1,137 @@
+/* =========================================================== 05 frentes ==== */
+
+.frentes__topo {
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(0, 1fr);
+  gap: clamp(28px, 4vw, 60px);
+  align-items: start;
+  margin-bottom: clamp(38px, 4.4vw, 60px);
+}
+
+.frentes__topo h2 {
+  /* o mockup usa um corpo menor aqui pra DIFERENTES CAMINHOS caber em uma linha */
+  font-size: clamp(32px, 4.3vw, 62px);
+  color: var(--marinho);
+}
+
+.frentes__apoio {
+  max-width: 46ch;
+  padding-top: clamp(10px, 2.4vw, 34px);
+  color: #33405c;
+}
+
+.frentes__grade {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(20px, 2.2vw, 30px);
+}
+
+/* -------------------------------------------------------------- card ----- */
+
+.card-frente {
+  display: flex;
+  flex-direction: column;
+  background: var(--branco);
+  border-radius: var(--r);
+  overflow: hidden;
+  box-shadow: var(--sombra-card);
+  transition: transform 0.35s cubic-bezier(0.22, 0.61, 0.36, 1), box-shadow 0.35s ease;
+}
+
+.card-frente:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--sombra-card-hover);
+}
+
+.card-frente picture {
+  display: block;
+  overflow: hidden;
+}
+
+.card-frente img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.card-frente:hover img {
+  transform: scale(1.055);
+}
+
+.card-frente__corpo {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: clamp(20px, 1.8vw, 26px) clamp(20px, 1.8vw, 26px) clamp(20px, 1.7vw, 24px);
+}
+
+.card-frente h3 {
+  font-family: var(--f-display);
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(19px, 1.7vw, 24px);
+  line-height: 1.08;
+  letter-spacing: 0.015em;
+  text-transform: uppercase;
+  color: var(--marinho);
+  margin-bottom: 12px;
+  padding-right: 0.14em;
+}
+
+.card-frente p {
+  flex: 1;
+  font-size: clamp(14px, 1.08vw, 16px);
+  line-height: 1.6;
+  color: #46526e;
+  margin-bottom: 20px;
+}
+
+/* --------------------------------------------------------- link com seta */
+
+.link-seta {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  align-self: flex-start;
+  font-size: clamp(12px, 1vw, 14px);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--marinho);
+  transition: color 0.25s ease, gap 0.25s ease;
+}
+
+.link-seta svg {
+  transition: transform 0.25s ease;
+}
+
+.link-seta:hover {
+  color: var(--verde);
+}
+
+.link-seta:hover svg {
+  transform: translateX(5px);
+}
+
+/* ----------------------------------------------------------------- mobile */
+
+@media (max-width: 900px) {
+  .frentes__topo {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .frentes__apoio {
+    padding-top: 0;
+  }
+
+  .frentes__grade {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .card-frente img {
+    aspect-ratio: 16 / 9;
+  }
+}

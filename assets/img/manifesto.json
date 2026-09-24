@@ -1,0 +1,342 @@
+{
+ "hero-desktop-1672.avif": {
+  "w": 1672,
+  "h": 940,
+  "kb": 64.6
+ },
+ "hero-desktop-1672.webp": {
+  "w": 1672,
+  "h": 940,
+  "kb": 102.7
+ },
+ "hero-desktop-1280.avif": {
+  "w": 1280,
+  "h": 720,
+  "kb": 45.9
+ },
+ "hero-desktop-1280.webp": {
+  "w": 1280,
+  "h": 720,
+  "kb": 72.5
+ },
+ "hero-desktop-960.avif": {
+  "w": 960,
+  "h": 540,
+  "kb": 32.2
+ },
+ "hero-desktop-960.webp": {
+  "w": 960,
+  "h": 540,
+  "kb": 51.8
+ },
+ "hero-mobile-900.avif": {
+  "w": 900,
+  "h": 1599,
+  "kb": 64.4
+ },
+ "hero-mobile-900.webp": {
+  "w": 900,
+  "h": 1599,
+  "kb": 103.8
+ },
+ "hero-mobile-760.avif": {
+  "w": 760,
+  "h": 1350,
+  "kb": 52.1
+ },
+ "hero-mobile-760.webp": {
+  "w": 760,
+  "h": 1350,
+  "kb": 85.6
+ },
+ "hero-mobile-640.avif": {
+  "w": 640,
+  "h": 1137,
+  "kb": 42.1
+ },
+ "hero-mobile-640.webp": {
+  "w": 640,
+  "h": 1137,
+  "kb": 68.8
+ },
+ "hero-mobile-540.avif": {
+  "w": 540,
+  "h": 959,
+  "kb": 34
+ },
+ "hero-mobile-540.webp": {
+  "w": 540,
+  "h": 959,
+  "kb": 55.8
+ },
+ "quem-somos-1-860.avif": {
+  "w": 860,
+  "h": 1290,
+  "kb": 40.3
+ },
+ "quem-somos-1-860.webp": {
+  "w": 860,
+  "h": 1290,
+  "kb": 72.2
+ },
+ "quem-somos-1-640.avif": {
+  "w": 640,
+  "h": 960,
+  "kb": 26.7
+ },
+ "quem-somos-1-640.webp": {
+  "w": 640,
+  "h": 960,
+  "kb": 47.8
+ },
+ "quem-somos-1-430.avif": {
+  "w": 430,
+  "h": 645,
+  "kb": 15.8
+ },
+ "quem-somos-1-430.webp": {
+  "w": 430,
+  "h": 645,
+  "kb": 27.3
+ },
+ "quem-somos-2-380.avif": {
+  "w": 330,
+  "h": 275,
+  "kb": 8.6
+ },
+ "quem-somos-2-380.webp": {
+  "w": 330,
+  "h": 275,
+  "kb": 14.2
+ },
+ "frente-esporte-760.avif": {
+  "w": 760,
+  "h": 507,
+  "kb": 27.5
+ },
+ "frente-esporte-760.webp": {
+  "w": 760,
+  "h": 507,
+  "kb": 49.1
+ },
+ "frente-esporte-560.avif": {
+  "w": 560,
+  "h": 373,
+  "kb": 18.2
+ },
+ "frente-esporte-560.webp": {
+  "w": 560,
+  "h": 373,
+  "kb": 32.2
+ },
+ "frente-esporte-380.avif": {
+  "w": 380,
+  "h": 253,
+  "kb": 10.6
+ },
+ "frente-esporte-380.webp": {
+  "w": 380,
+  "h": 253,
+  "kb": 18.3
+ },
+ "frente-cultura-760.avif": {
+  "w": 760,
+  "h": 428,
+  "kb": 19.5
+ },
+ "frente-cultura-760.webp": {
+  "w": 760,
+  "h": 428,
+  "kb": 35.6
+ },
+ "frente-cultura-560.avif": {
+  "w": 560,
+  "h": 315,
+  "kb": 13
+ },
+ "frente-cultura-560.webp": {
+  "w": 560,
+  "h": 315,
+  "kb": 23
+ },
+ "frente-cultura-380.avif": {
+  "w": 380,
+  "h": 214,
+  "kb": 7.5
+ },
+ "frente-cultura-380.webp": {
+  "w": 380,
+  "h": 214,
+  "kb": 13.2
+ },
+ "frente-lazer-760.avif": {
+  "w": 760,
+  "h": 428,
+  "kb": 25.2
+ },
+ "frente-lazer-760.webp": {
+  "w": 760,
+  "h": 428,
+  "kb": 42.9
+ },
+ "frente-lazer-560.avif": {
+  "w": 560,
+  "h": 315,
+  "kb": 17
+ },
+ "frente-lazer-560.webp": {
+  "w": 560,
+  "h": 315,
+  "kb": 28.9
+ },
+ "frente-lazer-380.avif": {
+  "w": 380,
+  "h": 214,
+  "kb": 9.9
+ },
+ "frente-lazer-380.webp": {
+  "w": 380,
+  "h": 214,
+  "kb": 16.8
+ },
+ "noticia-1-760.avif": {
+  "w": 760,
+  "h": 428,
+  "kb": 28.8
+ },
+ "noticia-1-760.webp": {
+  "w": 760,
+  "h": 428,
+  "kb": 50.9
+ },
+ "noticia-1-560.avif": {
+  "w": 560,
+  "h": 315,
+  "kb": 19.1
+ },
+ "noticia-1-560.webp": {
+  "w": 560,
+  "h": 315,
+  "kb": 33.6
+ },
+ "noticia-1-380.avif": {
+  "w": 380,
+  "h": 214,
+  "kb": 11.1
+ },
+ "noticia-1-380.webp": {
+  "w": 380,
+  "h": 214,
+  "kb": 19.9
+ },
+ "noticia-2-455.avif": {
+  "w": 455,
+  "h": 403,
+  "kb": 11.2
+ },
+ "noticia-2-455.webp": {
+  "w": 455,
+  "h": 403,
+  "kb": 18.9
+ },
+ "noticia-2-380.avif": {
+  "w": 380,
+  "h": 337,
+  "kb": 9
+ },
+ "noticia-2-380.webp": {
+  "w": 380,
+  "h": 337,
+  "kb": 15.4
+ },
+ "noticia-3-446.avif": {
+  "w": 446,
+  "h": 471,
+  "kb": 15.8
+ },
+ "noticia-3-446.webp": {
+  "w": 446,
+  "h": 471,
+  "kb": 27.1
+ },
+ "noticia-3-380.avif": {
+  "w": 380,
+  "h": 401,
+  "kb": 13.1
+ },
+ "noticia-3-380.webp": {
+  "w": 380,
+  "h": 401,
+  "kb": 22
+ },
+ "cta-rio-1920.avif": {
+  "w": 1920,
+  "h": 720,
+  "kb": 60.1
+ },
+ "cta-rio-1920.webp": {
+  "w": 1920,
+  "h": 720,
+  "kb": 119
+ },
+ "cta-rio-1400.avif": {
+  "w": 1400,
+  "h": 525,
+  "kb": 37.4
+ },
+ "cta-rio-1400.webp": {
+  "w": 1400,
+  "h": 525,
+  "kb": 74.4
+ },
+ "cta-rio-980.avif": {
+  "w": 980,
+  "h": 367,
+  "kb": 20.8
+ },
+ "cta-rio-980.webp": {
+  "w": 980,
+  "h": 367,
+  "kb": 41.5
+ },
+ "logo-320.avif": {
+  "w": 320,
+  "h": 362,
+  "kb": 22.9
+ },
+ "logo-320.webp": {
+  "w": 320,
+  "h": 362,
+  "kb": 45
+ },
+ "logo-200.avif": {
+  "w": 200,
+  "h": 226,
+  "kb": 13.1
+ },
+ "logo-200.webp": {
+  "w": 200,
+  "h": 226,
+  "kb": 24.5
+ },
+ "lettering-560.avif": {
+  "w": 560,
+  "h": 90,
+  "kb": 12.7
+ },
+ "lettering-560.webp": {
+  "w": 560,
+  "h": 90,
+  "kb": 21.8
+ },
+ "lettering-320.avif": {
+  "w": 320,
+  "h": 52,
+  "kb": 7.4
+ },
+ "lettering-320.webp": {
+  "w": 320,
+  "h": 52,
+  "kb": 10.6
+ }
+}

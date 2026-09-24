@@ -1,0 +1,291 @@
+/* ============================================================ 00 header ==== */
+
+.pula-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 200;
+  padding: 12px 20px;
+  background: var(--amarelo);
+  color: var(--marinho);
+  font-weight: 700;
+}
+
+.pula-link:focus {
+  left: 12px;
+  top: 12px;
+}
+
+.topo {
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 100;
+  height: var(--header-h);
+  background: transparent;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, height 0.3s ease;
+}
+
+/* O hero é escuro, então no topo da página o header pode ser transparente.
+   Depois da primeira rolagem ele ganha fundo pra continuar legível. */
+.topo.rolou {
+  background: var(--marinho);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.3);
+}
+
+.topo__inner {
+  display: flex;
+  align-items: center;
+  gap: 26px;
+  height: 100%;
+  position: relative;
+}
+
+/* a linha fina que o mockup mostra por baixo do menu */
+.topo__inner::after {
+  content: '';
+  position: absolute;
+  left: var(--gutter);
+  right: var(--gutter);
+  bottom: 0;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.16);
+}
+
+.topo.rolou .topo__inner::after {
+  opacity: 0;
+}
+
+/* Brasão e nome por extenso andam juntos, num link só. */
+.topo__marca {
+  flex: none;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+/* O logo é mais alto que a barra e transborda pra baixo, como no mockup. */
+.topo__logo {
+  flex: none;
+  display: block;
+  width: 92px;
+  margin-bottom: -26px;
+  transition: width 0.3s ease, margin-bottom 0.3s ease;
+}
+
+.topo__logo img {
+  width: 100%;
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.35));
+}
+
+.topo.rolou .topo__logo {
+  width: 76px;
+  margin-bottom: -14px;
+}
+
+/* O lettering veio recortado do fundo marinho, com alfa: o header é
+   transparente por cima da foto do hero e não pode aparecer retângulo. */
+.topo__nome {
+  flex: none;
+  display: block;
+  width: 240px;
+  transition: width 0.3s ease;
+}
+
+.topo__nome img {
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.45));
+}
+
+.topo.rolou .topo__nome {
+  width: 212px;
+}
+
+.topo__nav {
+  margin-left: auto;
+}
+
+.topo__nav ul {
+  display: flex;
+  align-items: center;
+  /* 8 itens de menu ao lado do nome por extenso: com o gap antigo (30px) o
+     menu encostava no lettering. */
+  gap: clamp(14px, 1.6vw, 23px);
+}
+
+.topo__nav a {
+  position: relative;
+  display: block;
+  padding: 6px 0;
+  font-family: var(--f-display);
+  font-size: clamp(12px, 1.04vw, 15px);
+  font-style: italic;
+  letter-spacing: 0.055em;
+  text-transform: uppercase;
+  color: var(--branco);
+  transition: color 0.22s ease;
+}
+
+.topo__nav a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 3px;
+  background: var(--amarelo);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.topo__nav a:hover {
+  color: var(--amarelo);
+}
+
+.topo__nav a:hover::after,
+.topo__nav a.ativo::after {
+  transform: scaleX(1);
+}
+
+.topo__nav a.ativo {
+  color: var(--amarelo);
+}
+
+.topo__cta {
+  flex: none;
+  margin-left: 4px;
+  padding: 12px 22px;
+}
+
+.topo__hamb {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 42px;
+  height: 42px;
+  margin-left: auto;
+  padding: 0 4px;
+}
+
+.topo__hamb span {
+  display: block;
+  height: 3px;
+  border-radius: 2px;
+  background: var(--branco);
+  transition: transform 0.3s ease, opacity 0.2s ease;
+}
+
+.topo__hamb[aria-expanded='true'] span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+.topo__hamb[aria-expanded='true'] span:nth-child(2) {
+  opacity: 0;
+}
+.topo__hamb[aria-expanded='true'] span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* ------------------------------------------------------------ menu mobile */
+
+.menu-mobile {
+  position: fixed;
+  inset: var(--header-h) 0 0;
+  z-index: 99;
+  background: var(--marinho);
+  padding: 26px var(--gutter) 40px;
+  overflow-y: auto;
+  animation: menu-entra 0.28s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.menu-mobile[hidden] {
+  display: none;
+}
+
+@keyframes menu-entra {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+}
+
+.menu-mobile a {
+  display: block;
+  padding: 16px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  font-family: var(--f-display);
+  font-style: italic;
+  font-size: 24px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--branco);
+}
+
+.menu-mobile a:active {
+  color: var(--amarelo);
+}
+
+/* Com 8 itens, o menu na horizontal deixa de caber antes: até 1080 ele passava,
+   mas empurrava o botão pra fora da margem do container. */
+@media (max-width: 1200px) {
+  .topo__nav {
+    display: none;
+  }
+  .topo__nome,
+  .topo.rolou .topo__nome {
+    width: 230px;
+  }
+  /* Sem o menu, só o botão empurra: com auto nos dois o botão parava no meio. */
+  .topo__hamb {
+    display: flex;
+    margin-left: 4px;
+  }
+  .topo__cta {
+    margin-left: auto;
+  }
+}
+
+@media (max-width: 900px) {
+  .topo__nome,
+  .topo.rolou .topo__nome {
+    width: 196px;
+  }
+  .topo__logo {
+    width: 72px;
+    margin-bottom: -20px;
+  }
+  .topo.rolou .topo__logo {
+    width: 62px;
+    margin-bottom: -12px;
+  }
+  .topo__inner {
+    gap: 12px;
+  }
+  .topo__cta {
+    padding: 10px 16px;
+    font-size: 12px;
+    gap: 8px;
+  }
+  .topo__hamb {
+    margin-left: 0;
+    width: 38px;
+  }
+}
+
+/* Abaixo disso o nome não cabe ao lado do botão e do hambúrguer. */
+@media (max-width: 620px) {
+  .topo__nome {
+    display: none;
+  }
+}
+
+@media (max-width: 400px) {
+  .topo__cta {
+    padding: 9px 12px;
+    font-size: 11px;
+  }
+  .topo__logo {
+    width: 62px;
+  }
+}

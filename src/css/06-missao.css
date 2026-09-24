@@ -1,0 +1,129 @@
+/* ============================================================ 04 missão ==== */
+
+.missao {
+  color: var(--marinho);
+}
+
+.missao__topo {
+  display: grid;
+  grid-template-columns: minmax(0, 1.06fr) 1px minmax(0, 1fr);
+  gap: clamp(30px, 4vw, 58px);
+  align-items: start;
+}
+
+/* No mockup os quatro ícones não atravessam a seção: ficam na mesma coluna do
+   texto, logo abaixo dele. */
+.missao__lado {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(34px, 4vw, 60px);
+}
+
+.missao__titulo h2 {
+  color: var(--marinho);
+  text-shadow: 0 2px 0 rgba(1, 21, 55, 0.07);
+}
+
+.missao__fio {
+  background: var(--marinho);
+  opacity: 0.22;
+}
+
+.missao__texto p {
+  max-width: 48ch;
+  color: #1b2a4a;
+}
+
+.missao__texto p + p {
+  margin-top: 18px;
+}
+
+.missao__titulo {
+  padding-bottom: clamp(10px, 2vw, 26px);
+}
+
+/* ------------------------------------------------------- os quatro ícones */
+
+.missao__pilares {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.missao__pilares li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  /* folga apertada de propósito: na coluna da direita, FORTALECIMENTO quebrava
+     em três linhas e desalinhava a faixa inteira */
+  padding: 4px 8px;
+  text-align: center;
+}
+
+.missao__pilares li + li {
+  border-left: 1px solid rgba(1, 21, 55, 0.22);
+}
+
+.missao__pilares svg {
+  width: clamp(28px, 2.4vw, 34px);
+  height: auto;
+  color: var(--marinho);
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.missao__pilares li:hover svg {
+  transform: translateY(-4px) scale(1.08);
+}
+
+.missao__pilares p {
+  font-family: var(--f-display);
+  font-style: italic;
+  font-size: clamp(12px, 1.18vw, 17px);
+  line-height: 1.16;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+/* ----------------------------------------------------------------- mobile */
+
+@media (max-width: 900px) {
+  .missao__topo {
+    grid-template-columns: 1fr;
+    gap: 26px;
+  }
+
+  .missao__lado {
+    gap: 34px;
+  }
+
+  .missao__fio {
+    display: none;
+  }
+
+  .missao__pilares {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 6px;
+  }
+
+  .missao__pilares li {
+    padding: 22px 10px;
+  }
+
+  .missao__pilares p {
+    font-size: 15px;
+  }
+
+  .missao__pilares svg {
+    width: 32px;
+  }
+
+  .missao__pilares li + li {
+    border-left: 0;
+  }
+  .missao__pilares li:nth-child(2n) {
+    border-left: 1px solid rgba(1, 21, 55, 0.22);
+  }
+  .missao__pilares li:nth-child(n + 3) {
+    border-top: 1px solid rgba(1, 21, 55, 0.22);
+  }
+}

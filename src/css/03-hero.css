@@ -1,0 +1,195 @@
+/* ============================================================== 01 hero ==== */
+
+.hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: clamp(560px, 70vh, 720px);
+  padding-top: var(--header-h);
+  background: var(--marinho);
+  overflow: hidden;
+  isolation: isolate;
+}
+
+/* A foto entra desbotando pela esquerda, pela própria máscara. Cortar a foto
+   num inset e cobrir a emenda com gradiente deixava um degrau vertical visível
+   justo onde o véu ainda é quase opaco. */
+.hero__foto {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  -webkit-mask-image: linear-gradient(90deg, transparent 4%, #000 48%);
+  mask-image: linear-gradient(90deg, transparent 4%, #000 48%);
+}
+
+.hero__foto img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 62% 52%;
+}
+
+/* O véu escurece a foto pro texto ter contraste e puxa o azul da marca por
+   cima do céu, que sozinho é claro demais e briga com o marinho. */
+.hero__veu {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    linear-gradient(90deg, rgba(1, 21, 55, 0.96) 28%, rgba(1, 21, 55, 0.6) 50%, rgba(1, 21, 55, 0.24) 72%, rgba(1, 21, 55, 0.3) 100%),
+    linear-gradient(180deg, rgba(1, 21, 55, 0.6) 0%, rgba(1, 21, 55, 0.04) 34%, rgba(1, 21, 55, 0.28) 100%);
+}
+
+.hero__inner {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 32px;
+  width: 100%;
+  padding-block: clamp(40px, 6vw, 72px);
+}
+
+.hero__texto {
+  max-width: 660px;
+}
+
+.hero__kicker {
+  font-size: clamp(11px, 1.05vw, 14px);
+  font-weight: 600;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--branco);
+  margin-bottom: 22px;
+}
+
+.hero__kicker span {
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.hero__titulo {
+  font-size: clamp(38px, 5.6vw, 76px);
+  color: var(--branco);
+  text-shadow: 0 3px 18px rgba(0, 0, 0, 0.42);
+  margin-bottom: 26px;
+}
+
+.hero__sub {
+  max-width: 46ch;
+  font-size: clamp(15px, 1.25vw, 18px);
+  color: rgba(255, 255, 255, 0.92);
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.45);
+  margin-bottom: 30px;
+}
+
+/* ------------------------------------------------------- lettering do hero */
+
+.hero__lettering {
+  flex: none;
+  text-align: right;
+  color: var(--branco);
+  margin-top: 6px;
+}
+
+.hero__lettering .script {
+  display: block;
+  font-size: clamp(26px, 2.9vw, 42px);
+  text-shadow: 0 3px 16px rgba(0, 0, 0, 0.45);
+}
+
+.hero__lettering .rabisco {
+  margin-top: 10px;
+  margin-left: auto;
+  width: clamp(110px, 11vw, 168px);
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.4));
+}
+
+/* ---------------------------------------------------------------- mobile */
+
+@media (max-width: 900px) {
+  .hero {
+    min-height: 0;
+    align-items: stretch;
+  }
+
+  /* No celular a foto é o fundo do hero inteiro, como no mockup, e não um
+     bloco entre o título e o subtítulo. */
+  .hero__foto {
+    inset: 0;
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+
+  .hero__foto img {
+    object-position: 62% 34%;
+  }
+
+  .hero__veu {
+    background:
+      linear-gradient(180deg, rgba(1, 21, 55, 0.94) 0%, rgba(1, 21, 55, 0.84) 36%, rgba(1, 21, 55, 0.5) 64%, rgba(1, 21, 55, 0.74) 100%),
+      linear-gradient(90deg, rgba(1, 21, 55, 0.86) 0%, rgba(1, 21, 55, 0.24) 76%);
+  }
+
+  .hero__inner {
+    display: block;
+    padding-block: 34px 46px;
+  }
+
+  .hero__texto {
+    max-width: none;
+  }
+
+  /* Com 0.3em de espaçamento o kicker quebrava em cinco linhas no celular.
+     O span vira bloco pra a quebra cair sempre no mesmo lugar do mockup. */
+  .hero__kicker {
+    font-size: 11.5px;
+    letter-spacing: 0.2em;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+
+  .hero__kicker span {
+    display: block;
+  }
+
+  /* A largura em em é o que faz a headline quebrar nas quatro linhas do
+     mockup e manter o canto de cima à direita livre pro lettering. */
+  .hero__titulo {
+    max-width: 7.6em;
+    font-size: clamp(34px, 10.2vw, 46px);
+    margin-bottom: 22px;
+  }
+
+  .hero__sub {
+    max-width: 30ch;
+    font-size: 15px;
+    margin-bottom: 26px;
+  }
+
+  /* o lettering sobe pro canto direito, na altura do kicker */
+  .hero__lettering {
+    position: absolute;
+    top: calc(var(--header-h) + 88px);
+    right: var(--gutter);
+    margin: 0;
+    text-align: right;
+  }
+
+  .hero__lettering .script {
+    font-size: clamp(22px, 6.2vw, 30px);
+  }
+
+  .hero__lettering .rabisco {
+    width: clamp(78px, 21vw, 108px);
+  }
+}
+
+@media (max-width: 430px) {
+  .hero__titulo {
+    max-width: 7.2em;
+  }
+  .hero__lettering {
+    top: calc(var(--header-h) + 76px);
+  }
+}

@@ -1,0 +1,59 @@
+<header class="topo" id="topo">
+  <div class="topo__inner container">
+
+    <a class="topo__marca" href="#inicio" aria-label="CBD, Confederação Brasileira de Desportos e Lazer, ir para o início">
+      <picture class="topo__logo">
+        <source type="image/avif" srcset="/assets/img/logo-200.avif 200w, /assets/img/logo-320.avif 320w" sizes="(max-width: 900px) 72px, 100px">
+        <source type="image/webp" srcset="/assets/img/logo-200.webp 200w, /assets/img/logo-320.webp 320w" sizes="(max-width: 900px) 72px, 100px">
+        <img src="/assets/img/logo-320.webp" alt="Confederação Brasileira de Desportos e Lazer" width="320" height="362" fetchpriority="high" decoding="async">
+      </picture>
+      <!-- O nome por extenso. O alt fica vazio de propósito: o aria-label do
+           link já diz o nome, e repetir faria o leitor de tela ler duas vezes. -->
+      <picture class="topo__nome">
+        <source type="image/avif" srcset="/assets/img/lettering-320.avif 320w, /assets/img/lettering-560.avif 560w" sizes="(max-width: 1080px) 230px, 280px">
+        <source type="image/webp" srcset="/assets/img/lettering-320.webp 320w, /assets/img/lettering-560.webp 560w" sizes="(max-width: 1080px) 230px, 280px">
+        <img src="/assets/img/lettering-560.webp" alt="" width="560" height="90" fetchpriority="high" decoding="async">
+      </picture>
+    </a>
+
+    <nav class="topo__nav" aria-label="Navegação principal">
+      <ul>
+        <li><a href="#inicio">Início</a></li>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#atuacao">Atuação</a></li>
+        <li><a href="#projetos">Projetos</a></li>
+        <li><a href="#noticias">Notícias</a></li>
+        <li><a href="#parcerias">Parcerias</a></li>
+        <li><a href="#transparencia">Transparência</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </nav>
+
+    <a class="btn btn--amarelo topo__cta" href="{{whatsappLink}}" target="_blank" rel="noopener">
+      <span class="btn__wpp" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.4-1.48-.88-.79-1.48-1.76-1.66-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.22 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.7.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.18-1.42-.07-.13-.27-.2-.57-.35zM12.04 21.5h-.01a9.4 9.4 0 0 1-4.8-1.32l-.34-.2-3.57.94.95-3.48-.22-.36a9.38 9.38 0 0 1-1.44-5.01c0-5.19 4.23-9.41 9.43-9.41a9.36 9.36 0 0 1 6.66 2.76 9.32 9.32 0 0 1 2.76 6.66c0 5.19-4.23 9.42-9.42 9.42zM20.5 3.49A11.29 11.29 0 0 0 12.04 0C5.85 0 .81 5.03.8 11.21c0 1.98.52 3.9 1.5 5.6L.7 22.9l6.23-1.63a11.23 11.23 0 0 0 5.1 1.3h.01c6.19 0 11.23-5.03 11.23-11.21 0-3-1.17-5.81-3.29-7.93z"/></svg>
+      </span>
+      Fale conosco
+    </a>
+
+    <button class="topo__hamb" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu-mobile">
+      <span></span><span></span><span></span>
+    </button>
+
+  </div>
+</header>
+
+<div class="menu-mobile" id="menu-mobile" hidden>
+  <nav aria-label="Navegação principal do celular">
+    <ul>
+      <li><a href="#inicio">Início</a></li>
+      <li><a href="#sobre">Sobre</a></li>
+      <li><a href="#atuacao">Atuação</a></li>
+      <li><a href="#projetos">Projetos</a></li>
+      <li><a href="#noticias">Notícias</a></li>
+      <li><a href="#parcerias">Parcerias</a></li>
+        <li><a href="#transparencia">Transparência</a></li>
+      <li><a href="#contato">Contato</a></li>
+    </ul>
+  </nav>
+</div>

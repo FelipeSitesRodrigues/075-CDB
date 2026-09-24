@@ -1,0 +1,88 @@
+<footer class="rodape" id="contato">
+  <div class="container">
+
+    <div class="rodape__grade">
+
+      <div class="rodape__marca">
+        <picture>
+          <source type="image/avif" srcset="/assets/img/logo-200.avif 200w, /assets/img/logo-320.avif 320w" sizes="128px">
+          <source type="image/webp" srcset="/assets/img/logo-200.webp 200w, /assets/img/logo-320.webp 320w" sizes="128px">
+          <img src="/assets/img/logo-320.webp" alt="Confederação Brasileira de Desportos e Lazer" width="320" height="362" loading="lazy" decoding="async">
+        </picture>
+      </div>
+
+      <p class="rodape__tag">Esporte, Cultura, Lazer<br>e Inclusão Social.</p>
+
+      <nav class="rodape__col" aria-label="Links do rodapé">
+        <h2>Links rápidos</h2>
+        <ul>
+          <li><a href="#inicio">Início</a></li>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#atuacao">Atuação</a></li>
+          <li><a href="#projetos">Projetos</a></li>
+          <li><a href="#noticias">Notícias</a></li>
+          <li><a href="#parcerias">Parcerias</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </nav>
+
+      <div class="rodape__col rodape__contato">
+        <h2>Contato</h2>
+        <ul>
+          <li>
+            <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.9" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="15" rx="2.2"/><path d="m3 6 9 6.5L21 6"/></svg>
+            <a href="mailto:{{email}}">{{email}}</a>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.9" aria-hidden="true"><path d="M12 22s7.5-6.2 7.5-12a7.5 7.5 0 0 0-15 0c0 5.8 7.5 12 7.5 12Z"/><circle cx="12" cy="10" r="2.8"/></svg>
+            <span>{{local}}</span>
+          </li>
+          <?se whatsapp?>
+          <li>
+            <svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.4-1.48-.88-.79-1.48-1.76-1.66-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.22 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.7.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.18-1.42-.07-.13-.27-.2-.57-.35zM12.04 21.5h-.01a9.4 9.4 0 0 1-4.8-1.32l-.34-.2-3.57.94.95-3.48-.22-.36a9.38 9.38 0 0 1-1.44-5.01c0-5.19 4.23-9.41 9.43-9.41a9.36 9.36 0 0 1 6.66 2.76 9.32 9.32 0 0 1 2.76 6.66c0 5.19-4.23 9.42-9.42 9.42zM20.5 3.49A11.29 11.29 0 0 0 12.04 0C5.85 0 .81 5.03.8 11.21c0 1.98.52 3.9 1.5 5.6L.7 22.9l6.23-1.63a11.23 11.23 0 0 0 5.1 1.3h.01c6.19 0 11.23-5.03 11.23-11.21 0-3-1.17-5.81-3.29-7.93z"/></svg>
+            <a href="{{whatsappLink}}" target="_blank" rel="noopener">WhatsApp</a>
+          </li>
+          <?/se?>
+        </ul>
+      </div>
+
+      <div class="rodape__col rodape__social">
+        <h2>Siga a CBD</h2>
+        <ul>
+          <?se instagram?>
+          <li><a href="{{instagram}}" target="_blank" rel="noopener" aria-label="Instagram da CBD">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"/></svg>
+          </a></li>
+          <?/se?>
+          <?se facebook?>
+          <li><a href="{{facebook}}" target="_blank" rel="noopener" aria-label="Facebook da CBD">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M14 8.5V6.9c0-.8.2-1.2 1.3-1.2h1.6V2.6c-.3 0-1.3-.1-2.4-.1-2.4 0-4 1.5-4 4.2v1.8H8v3.2h2.5V21H14v-9.3h2.5l.4-3.2H14Z"/></svg>
+          </a></li>
+          <?/se?>
+          <?se youtube?>
+          <li><a href="{{youtube}}" target="_blank" rel="noopener" aria-label="YouTube da CBD">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M22.1 7.5c-.2-1-.9-1.7-1.9-2C18.5 5.1 12 5.1 12 5.1s-6.5 0-8.2.4c-1 .3-1.7 1-1.9 2C1.5 9.2 1.5 12 1.5 12s0 2.8.4 4.5c.2 1 .9 1.7 1.9 2 1.7.4 8.2.4 8.2.4s6.5 0 8.2-.4c1-.3 1.7-1 1.9-2 .4-1.7.4-4.5.4-4.5s0-2.8-.4-4.5ZM10 15.3V8.7l5.5 3.3-5.5 3.3Z"/></svg>
+          </a></li>
+          <?/se?>
+          <?se linkedin?>
+          <li><a href="{{linkedin}}" target="_blank" rel="noopener" aria-label="LinkedIn da CBD">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M6.2 21H2.8V9h3.4v12ZM4.5 7.5a2 2 0 1 1 0-4 2 2 0 0 1 0 4ZM21.2 21h-3.4v-5.8c0-1.4 0-3.2-1.9-3.2s-2.2 1.5-2.2 3.1V21h-3.4V9h3.2v1.6h.1a3.6 3.6 0 0 1 3.2-1.8c3.4 0 4.1 2.3 4.1 5.2V21Z"/></svg>
+          </a></li>
+          <?/se?>
+        </ul>
+        <?nao temRedes?><p class="rodape__aviso-social">Redes sociais em breve.</p><?/nao?>
+      </div>
+
+    </div>
+
+    <div class="rodape__base">
+      <p>© {{ano}} CBD, Confederação Brasileira de Desportos e Lazer. Todos os direitos reservados.<?se cnpj?> CNPJ {{cnpj}}.<?/se?></p>
+      <p class="rodape__legais">
+        <a href="#contato">Política de Privacidade</a>
+        <span aria-hidden="true">|</span>
+        <a href="#contato">Termos de Uso</a>
+      </p>
+    </div>
+
+  </div>
+</footer>

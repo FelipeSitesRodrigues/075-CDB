@@ -1,0 +1,77 @@
+<?se mostrarNoticias?>
+<!--
+  ATENÇÃO: os três cards abaixo são CONTEÚDO DE EXEMPLO.
+  Os títulos e as datas vieram do mockup, quem escreveu foi o ChatGPT, não a CBD.
+  Antes de publicar: ou o Vitor manda notícia de verdade, ou troque
+  "mostrarNoticias" para false em site.config.json e a seção inteira sai do build.
+  Notícia inventada com data inventada é o tipo de coisa que queima entidade do
+  Terceiro Setor com patrocinador e com prefeitura.
+-->
+<section class="secao secao--osso-claro noticias" id="noticias">
+  <div class="container">
+
+    <div class="noticias__topo">
+      <div class="reveal">
+        <p class="rotulo rotulo--marinho">Notícias</p>
+        <h2 class="display t-secao">Acompanhe<br>nossas novidades.</h2>
+      </div>
+      <a class="btn btn--linha-verde reveal" data-atraso="1" href="{{wpp|Olá! Vim pelo site e quero acompanhar as novidades da CBD.}}" target="_blank" rel="noopener">
+        Ver todas as notícias
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+
+    <ul class="noticias__grade">
+
+      <li class="card-noticia reveal">
+        <picture>
+          <source type="image/avif" srcset="/assets/img/noticia-1-380.avif 380w, /assets/img/noticia-1-560.avif 560w, /assets/img/noticia-1-760.avif 760w" sizes="(max-width: 900px) 92vw, 30vw">
+          <source type="image/webp" srcset="/assets/img/noticia-1-380.webp 380w, /assets/img/noticia-1-560.webp 560w, /assets/img/noticia-1-760.webp 760w" sizes="(max-width: 900px) 92vw, 30vw">
+          <img src="/assets/img/noticia-1-560.webp" alt="Crianças de uniforme jogando futebol num campo de comunidade" width="760" height="428" loading="lazy" decoding="async">
+        </picture>
+        <div class="card-noticia__corpo">
+          <span class="tag">Institucional</span>
+          <h3>CBD inicia articulação de parcerias em todo o Brasil</h3>
+          <div class="card-noticia__pe">
+            <time datetime="2026-09-15">15 de setembro de 2026</time>
+            <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg>
+          </div>
+        </div>
+      </li>
+
+      <li class="card-noticia reveal" data-atraso="1">
+        <picture>
+          <source type="image/avif" srcset="/assets/img/noticia-2-380.avif 380w, /assets/img/noticia-2-455.avif 455w" sizes="(max-width: 900px) 92vw, 30vw">
+          <source type="image/webp" srcset="/assets/img/noticia-2-380.webp 380w, /assets/img/noticia-2-455.webp 455w" sizes="(max-width: 900px) 92vw, 30vw">
+          <img src="/assets/img/noticia-2-455.webp" alt="Mãos de várias crianças unidas no centro de uma roda" width="455" height="403" loading="lazy" decoding="async">
+        </picture>
+        <div class="card-noticia__corpo">
+          <span class="tag">Comunidade</span>
+          <h3>O poder do esporte nas comunidades</h3>
+          <div class="card-noticia__pe">
+            <time datetime="2026-09-12">12 de setembro de 2026</time>
+            <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg>
+          </div>
+        </div>
+      </li>
+
+      <li class="card-noticia reveal" data-atraso="2">
+        <picture>
+          <source type="image/avif" srcset="/assets/img/noticia-3-380.avif 380w, /assets/img/noticia-3-446.avif 446w" sizes="(max-width: 900px) 92vw, 30vw">
+          <source type="image/webp" srcset="/assets/img/noticia-3-380.webp 380w, /assets/img/noticia-3-446.webp 446w" sizes="(max-width: 900px) 92vw, 30vw">
+          <img src="/assets/img/noticia-3-446.webp" alt="Duas crianças empinando pipa numa praça, com a cidade ao fundo" width="446" height="471" loading="lazy" decoding="async">
+        </picture>
+        <div class="card-noticia__corpo">
+          <span class="tag">Inclusão</span>
+          <h3>Cultura e lazer como ferramentas de transformação</h3>
+          <div class="card-noticia__pe">
+            <time datetime="2026-09-10">10 de setembro de 2026</time>
+            <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg>
+          </div>
+        </div>
+      </li>
+
+    </ul>
+  </div>
+</section>
+<?/se?>
