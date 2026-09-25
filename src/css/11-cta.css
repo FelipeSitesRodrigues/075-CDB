@@ -91,6 +91,19 @@
     gap: 26px;
   }
 
+  /* Sem isso o lettering continua preso na coluna 2 herdada do breakpoint de
+     1080px, e como aqui só existe 1 coluna explícita, o grid cria uma
+     implícita estreita e espreme o texto e o botão do cta__meio nela. */
+  .cta__lettering {
+    grid-column: auto;
+    text-align: left;
+    margin-top: 0;
+  }
+
+  .cta__lettering .rabisco {
+    margin-left: 0;
+  }
+
   .cta__foto img {
     object-position: 72% 46%;
   }
