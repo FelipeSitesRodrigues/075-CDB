@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://cbd.org.br/sitemap.xml
+Sitemap: https://www.cbf6.com.br/sitemap.xml

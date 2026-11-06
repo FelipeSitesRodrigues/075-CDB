@@ -19,6 +19,6 @@
   "mostrarNoticias": true,
   "_mostrarNoticias": "false tira a seção de notícias inteira do build; os 3 cards de hoje são exemplo do mockup, não notícia real",
 
-  "dominio": "https://cbd.org.br",
-  "_dominio": "usado em canonical e og:url, trocar quando o domínio real for definido"
+  "dominio": "https://www.cbf6.com.br",
+  "_dominio": "domínio no ar desde 2026-11-06; o sem www redireciona pra cá"
 }
