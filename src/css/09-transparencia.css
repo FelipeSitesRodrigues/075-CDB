@@ -84,20 +84,6 @@
   max-width: 372px;
 }
 
-/* Declaração logo abaixo do selo: alinhada à esquerda, porque é texto corrido
-   e centralizado em quatro ou cinco linhas cansa a leitura. */
-.transparencia__declaracao {
-  margin-top: 18px;
-  padding: 14px 16px;
-  border-left: 3px solid var(--amarelo);
-  border-radius: 0 8px 8px 0;
-  background: rgba(255, 255, 255, 0.06);
-  text-align: left;
-  font-size: 14px;
-  line-height: 1.6;
-  color: rgba(255, 255, 255, 0.9);
-}
-
 .transparencia__legenda {
   margin-top: 16px;
   font-size: 13px;
@@ -171,9 +157,6 @@
   .selo {
     max-width: 300px;
   }
-  .transparencia__selo {
-    max-width: 460px;
-  }
   .transparencia__legenda {
     text-align: left;
   }
@@ -196,5 +179,123 @@
   }
   .transparencia__externo {
     align-self: flex-start;
+  }
+}
+
+/* ------------------------------------------------------ ficha da emenda */
+
+.emenda {
+  margin-top: clamp(40px, 5vw, 64px);
+  padding: clamp(22px, 3vw, 36px);
+  border: 1px solid rgba(252, 197, 20, 0.35);
+  border-top: 4px solid var(--amarelo);
+  border-radius: 14px;
+  background: var(--marinho-esc);
+}
+
+.emenda__topo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px 18px;
+}
+
+.emenda__titulo {
+  font-family: var(--f-display);
+  font-style: italic;
+  font-size: clamp(22px, 2.2vw, 30px);
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--branco);
+}
+
+.emenda__status {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: rgba(252, 197, 20, 0.14);
+  color: var(--amarelo);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.emenda__status::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--amarelo);
+}
+
+.emenda__entidade {
+  margin-top: 12px;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.emenda__dados {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1px;
+  margin-top: 22px;
+  border-radius: 10px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.emenda__dados > div {
+  padding: 16px 18px;
+  background: var(--marinho-esc);
+}
+
+.emenda__dados dt {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--amarelo);
+}
+
+.emenda__dados dd {
+  margin: 6px 0 0;
+  font-size: 15px;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.emenda__objeto {
+  grid-column: 1 / -1;
+}
+
+.emenda__objeto dd {
+  max-width: 90ch;
+}
+
+.emenda__valor {
+  grid-column: 1 / -1;
+}
+
+.emenda__dados .emenda__valor dd {
+  font-family: var(--f-display);
+  font-size: clamp(30px, 3.4vw, 44px);
+  line-height: 1.1;
+  letter-spacing: 0.02em;
+  color: var(--amarelo);
+}
+
+@media (max-width: 700px) {
+  .emenda__dados {
+    grid-template-columns: 1fr;
+  }
+  .emenda__dados dd {
+    font-size: 14px;
+  }
+  /* o cartão já dá o recuo lateral; somado ao da linha, o texto ficava espremido */
+  .emenda__dados > div {
+    padding: 14px 0;
   }
 }
