@@ -84,6 +84,20 @@
   max-width: 372px;
 }
 
+/* Declaração logo abaixo do selo: alinhada à esquerda, porque é texto corrido
+   e centralizado em quatro ou cinco linhas cansa a leitura. */
+.transparencia__declaracao {
+  margin-top: 18px;
+  padding: 14px 16px;
+  border-left: 3px solid var(--amarelo);
+  border-radius: 0 8px 8px 0;
+  background: rgba(255, 255, 255, 0.06);
+  text-align: left;
+  font-size: 14px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.9);
+}
+
 .transparencia__legenda {
   margin-top: 16px;
   font-size: 13px;
@@ -156,6 +170,12 @@
   }
   .selo {
     max-width: 300px;
+  }
+  .transparencia__selo {
+    max-width: 460px;
+  }
+  .transparencia__legenda {
+    text-align: left;
   }
   .selo__titulo {
     font-size: 30px;
