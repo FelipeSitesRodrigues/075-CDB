@@ -89,12 +89,18 @@
   }
 
   // ------------------------------------------------------ item ativo do menu
-  var links = doc.querySelectorAll('.topo__nav a[href^="#"]')
+  // O selo da ADPF 854 no cabeçalho faz o papel do item Transparência.
+  var links = doc.querySelectorAll('.topo__nav a[href^="#"], .topo__selo')
+  var inicio = doc.querySelector('.topo__nav a[href^="#"]')
   var secoes = []
   for (var k = 0; k < links.length; k++) {
     var alvo = doc.getElementById(links[k].getAttribute('href').slice(1))
     if (alvo) secoes.push({ link: links[k], el: alvo })
   }
+  // vence a última seção visível, então a lista segue a ordem da página
+  secoes.sort(function (a, b) {
+    return a.el.compareDocumentPosition(b.el) & 4 ? -1 : 1
+  })
 
   if ('IntersectionObserver' in window && secoes.length) {
     var visiveis = {}
@@ -109,7 +115,7 @@
         }
         // No topo da página o ativo é sempre o primeiro, mesmo que a página
         // inteira caiba na viewport e várias seções cruzem a faixa ao mesmo tempo.
-        if (window.scrollY < 120) atual = links[0]
+        if (window.scrollY < 120) atual = inicio
         for (var l = 0; l < links.length; l++) links[l].classList.remove('ativo')
         if (atual) atual.classList.add('ativo')
       },

@@ -55,7 +55,7 @@
   opacity: 0;
 }
 
-/* Brasão e nome por extenso andam juntos, num link só. */
+/* O brasão é o link pro início. */
 .topo__marca {
   flex: none;
   display: flex;
@@ -82,23 +82,54 @@
   margin-bottom: -14px;
 }
 
-/* O lettering veio recortado do fundo marinho, com alfa: o header é
-   transparente por cima da foto do hero e não pode aparecer retângulo. */
-.topo__nome {
+/* Selo da ADPF 854: versão de bolso do selo da seção Transparência, com a
+   mesma moldura amarela e a faixa do número. */
+.topo__selo {
   flex: none;
-  display: block;
-  width: 240px;
-  transition: width 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 7px 13px 7px 11px;
+  border: 2px solid var(--amarelo);
+  border-radius: 10px;
+  background: rgba(0, 14, 41, 0.72);
+  color: var(--branco);
+  line-height: 1;
+  transition: background-color 0.22s ease, transform 0.22s ease;
 }
 
-.topo__nome img {
-  width: 100%;
-  height: auto;
-  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.45));
+.topo__selo:hover,
+.topo__selo.ativo {
+  background: var(--marinho-esc);
 }
 
-.topo.rolou .topo__nome {
-  width: 212px;
+.topo__selo:hover {
+  transform: translateY(-1px);
+}
+
+.topo__selo-estrela {
+  flex: none;
+  color: var(--amarelo);
+}
+
+.topo__selo-txt {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.topo__selo-titulo {
+  font-family: var(--f-display);
+  font-size: 15px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.topo__selo-num {
+  font-family: var(--f-display);
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  color: var(--amarelo);
 }
 
 .topo__nav {
@@ -232,10 +263,6 @@
   .topo__nav {
     display: none;
   }
-  .topo__nome,
-  .topo.rolou .topo__nome {
-    width: 230px;
-  }
   /* Sem o menu, só o botão empurra: com auto nos dois o botão parava no meio. */
   .topo__hamb {
     display: flex;
@@ -247,10 +274,6 @@
 }
 
 @media (max-width: 900px) {
-  .topo__nome,
-  .topo.rolou .topo__nome {
-    width: 196px;
-  }
   .topo__logo {
     width: 72px;
     margin-bottom: -20px;
@@ -284,9 +307,16 @@
     gap: 9px;
     min-width: 0;
   }
-  .topo__nome,
-  .topo.rolou .topo__nome {
-    width: clamp(104px, calc(100vw - 226px), 200px);
+  .topo__selo {
+    gap: 7px;
+    padding: 6px 10px 6px 9px;
+    min-width: 0;
+  }
+  .topo__selo-titulo {
+    font-size: 13px;
+  }
+  .topo__selo-num {
+    font-size: 12px;
   }
   .topo__cta {
     width: 44px;
@@ -319,8 +349,7 @@
   .topo.rolou .topo__logo {
     width: 54px;
   }
-  .topo__nome,
-  .topo.rolou .topo__nome {
-    width: clamp(96px, calc(100vw - 208px), 200px);
+  .topo__selo-estrela {
+    display: none;
   }
 }
