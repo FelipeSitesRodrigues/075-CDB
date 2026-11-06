@@ -143,37 +143,47 @@ await gerar('05C - ACOMPANHE NOSSAS ATIVIDADES.png', 'noticia-3', [446, 380], {
 await gerar('06 - VAMOS CONSTRUIR UM BRASIL.png', 'cta-rio', [1920, 1400, 980], { qAvif: 48 })
 
 // --------------------------------------------------------------------- logo
-await gerar('02 - LOGO PNG.png', 'logo', [320, 200], { alt: true, qAvif: 70, qWebp: 90 })
+// Desde 2026-11-06 a marca é CBF6. O logo veio sem alfa: círculo marinho com
+// os cantos pretos chapados. Recorta o círculo (medido no arquivo) com borda
+// suavizada de 1,5 px, encolhida 1 px pra não sobrar fio preto em volta.
+async function recortarCirculo(origem, { cx, cy, r }) {
+  const { data, info } = await sharp(R + origem).removeAlpha().raw().toBuffer({ resolveWithObject: true })
+  const out = Buffer.alloc(info.width * info.height * 4)
+  for (let y = 0; y < info.height; y++) {
+    for (let x = 0; x < info.width; x++) {
+      const p = y * info.width + x
+      const d = Math.hypot(x + 0.5 - cx, y + 0.5 - cy)
+      const a = Math.min(Math.max((r - 1 - d) / 1.5 + 0.5, 0), 1)
+      out[p * 4] = data[p * 3]
+      out[p * 4 + 1] = data[p * 3 + 1]
+      out[p * 4 + 2] = data[p * 3 + 2]
+      out[p * 4 + 3] = Math.round(a * 255)
+    }
+  }
+  const s = Math.round(r * 2)
+  const png = await sharp(out, { raw: { width: info.width, height: info.height, channels: 4 } })
+    .extract({ left: Math.round(cx - r), top: Math.round(cy - r), width: s, height: s })
+    .png()
+    .toBuffer()
+  return sharp(png)
+}
+const logo = await recortarCirculo('02B - LOGO CBF6.png', { cx: 361.5, cy: 365, r: 356.5 })
+await gerarDe(logo, 'logo', [320, 200])
 
-// ---------------------------------------------------------------- lettering
-// O nome por extenso que fica ao lado do brasão no header. Veio como JPG com
-// fundo marinho chapado; sai daqui com fundo transparente.
-await gerarDe(
-  await recortarFundo('01B - CONFEDERAÇÃO BRASILEIRA DESPORTE E LAZER.jpg', {
-    fundo: [1, 25, 59],
-    cores: [
-      [255, 255, 255], // CONFEDERAÇÃO BRASILEIRA
-      [17, 177, 79], //   DE DESPORTOS e a barra da esquerda
-      [255, 208, 9], //   & LAZER e a barra da direita
-    ],
-    // caixa medida no arquivo: tira a margem morta em volta do lettering
-    caixa: { left: 85, top: 129, width: 1433, height: 231 },
-  }),
-  'lettering',
-  [560, 320]
-)
-
-// O favicon e o ícone de PWA precisam ser png quadrado com fundo.
+// O favicon e o ícone de PWA precisam ser png quadrado com fundo, na cor do
+// próprio círculo do logo.
 for (const s of [32, 180, 512]) {
-  const buf = await sharp(R + '02 - LOGO PNG.png')
-    .resize({ width: Math.round(s * 0.86), height: Math.round(s * 0.86), fit: 'contain', background: '#011537' })
+  const buf = await logo
+    .clone()
+    .resize({ width: Math.round(s * 0.94), height: Math.round(s * 0.94) })
     .extend({
-      top: Math.round(s * 0.07),
-      bottom: Math.round(s * 0.07),
-      left: Math.round(s * 0.07),
-      right: Math.round(s * 0.07),
-      background: '#011537',
+      top: Math.round(s * 0.03),
+      bottom: s - Math.round(s * 0.94) - Math.round(s * 0.03),
+      left: Math.round(s * 0.03),
+      right: s - Math.round(s * 0.94) - Math.round(s * 0.03),
+      background: '#153A54',
     })
+    .flatten({ background: '#153A54' })
     .png({ compressionLevel: 9 })
     .toBuffer()
   writeFileSync(`${OUT}icone-${s}.png`, buf)

@@ -1,5 +1,5 @@
 /**
- * Build do site da CBD.
+ * Build do site da CBF6.
  *
  * Monta dist/index.html a partir de src/, com CSS e JS embutidos no HTML.
  * Embutir é de propósito: o site inteiro cabe numa resposta só, então não há
@@ -69,7 +69,7 @@ html = html.replace(/<\?nao ([\w]+)\?>([\s\S]*?)<\?\/nao\?>/g, (_, chave, dentro
 const linkWpp = (msg) =>
   cfg.whatsapp
     ? `https://wa.me/${cfg.whatsapp}?text=${encodeURIComponent(msg)}`
-    : `mailto:${cfg.email}?subject=${encodeURIComponent('Contato pelo site da CBD')}&body=${encodeURIComponent(msg)}`
+    : `mailto:${cfg.email}?subject=${encodeURIComponent('Contato pelo site da CBF6')}&body=${encodeURIComponent(msg)}`
 
 html = html.replace(/\{\{wpp\|([^}]+)\}\}/g, (_, msg) => linkWpp(msg.trim()))
 
